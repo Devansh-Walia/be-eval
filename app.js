@@ -6,7 +6,7 @@ const router = require('./routes/router');
 
 // init app
 const app = express();
-
+const port = process.env.PORT || 3000;
 // load view engine
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -19,5 +19,5 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', router);
-app.listen(8080, () => console.log('App is listening on url http://localhost:' + 8080));
+app.listen(port, () => console.log('App is listening on url http://localhost:' + port));
 
